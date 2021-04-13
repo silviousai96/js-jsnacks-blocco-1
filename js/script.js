@@ -3,13 +3,12 @@
 // peso
 // lunghezza
 
-// -Crea 10 oggetti che rappresentano una zucchina, indicandone per ognuno varietà, peso e lunghezza. 
+// 1- Crea 10 oggetti che rappresentano una zucchina, indicandone per ognuno varietà, peso e lunghezza. 
 // Calcola la somma del peso di tutte le zucchine.
 
-// -Crea 10 oggetti che rappresentano una zucchina. 
+// 2- Crea 10 oggetti che rappresentano una zucchina. 
 //  Dividi in due array separati le zucchine che misurano meno o più di 15cm.
 //  Infine stampa separatamente quanto pesano i due gruppi di zucchine.
-
 
 var zucchine = 
 [
@@ -26,14 +25,14 @@ var zucchine =
     },
 
     {
-        "varieta": "lunga",  
+        "varieta": "rigata",  
         "peso": 9, 
         "lunghezza":  13,    
     },
 
     {
         "varieta": "striata",  
-        "peso": 15, 
+        "peso": 13, 
         "lunghezza":  18,    
     },
 
@@ -87,4 +86,30 @@ var zucchine =
 // alert("La somma del peso di tutte le zucchine è di "+ somma +"Kg.");
 
 
+
+
+//ES.2
+var zucchineLunghe = [];
+var sommaLunghe = 0;
+
+var zucchineCorte = [];
+var sommaCorte = 0;
+
+for( var i=0; i < zucchine.length; i++) {
+    var thisZucchina = zucchine[i];  
+    
+    if( thisZucchina.lunghezza < 15 ) {
+        zucchineCorte.push(thisZucchina);       
+        sommaCorte = sommaCorte + thisZucchina.peso;
+
+    } else if( thisZucchina.lunghezza > 15) {
+        zucchineLunghe.push(thisZucchina);
+        sommaLunghe = sommaLunghe + thisZucchina.peso;
+    }
+}
+
+// console.log('zucchine lunghe:', zucchineLunghe);
+// console.log('zucchine corte:', zucchineCorte);
+
+alert('Le zucchine lunghe pesano ' + sommaLunghe + 'Kg, mentre le zucchine corte pesano complessivamente ' + sommaCorte +'Kg.');
 
